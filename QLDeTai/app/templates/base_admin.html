@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title> {{ title }} - First App</title>
+    {% else %}
+        <title> Welcome to homepage </title>
+    {% endif %}
+    <link href="{{ url_for('static', filename='css/class.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <style>
+       body{
+        height: 100vh;
+        background-color: #ebebeb;
+       
+       }
+   </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+        {% for message in messages %}
+        <script  type="text/javascript" >alert('{{message}}');</script>
+    {% endfor %}
+
+    {% endif %}
+    {% endwith %}
+    <div class="header">
+        <div class="left-header">
+            <a onclick="openNav()" style="cursor: pointer;"> <p>☰</p> </a>
+               <a href="/quanli"> <h1>Quản lý đề tài</h1></a>
+        </div>
+
+
+        <div class="right-header">
+            {% if current_user.is_anonymous %}
+                <a href="/login">Login</a>
+            {% else %}
+                <a href="/themlop">Thêm lớp</a>
+                <a href="/logout">Logout</a>
+
+            {% endif %}
+        </div>
+
+    </div>
+    <div class="content" style="background-color: #e6e6e6">
+        <div id="mySidenav" >
+            <h2 style="font-size: 16px; font-weight: bolder;margin-top: 0px; color:beige;text-align: center;border-bottom: 1px solid #adadad;">Danh sách lớp học</h2>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                {%for r2 in results%}
+                <a href="/quanli/Class/{{r2['IDLopHoc']}}">{{r2['TenLopHoc']}}</a> <br>
+                {% endfor%}
+        </div>
+    </div>
+    <script>
+    function openNav() {
+          document.getElementById("mySidenav").style.width = "170px";
+          document.getElementById("main").style.marginLeft = "170px";
+        }
+    
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+    {% block content%}
+
+
+    {% endblock%}
+</body>
+
+</html>

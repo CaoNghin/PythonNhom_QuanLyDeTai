@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content%}
+
+<div class="class-content">
+    {%for u in dslop%}
+    <div class="class"> 
+            <div class="title"> 
+                    <label>{{dsten[u['IDLopHoc']]}} 
+                
+                    </label> 
+             </div> 
+        {%if u['DaNop']==1 %}
+             
+            <div class="teacher"> 
+                    <p><a href="{{ url_for('xemchitiet',malop=u['IDLopHoc']) }}">Xem chi tiết</a></p>
+            </div>
+  
+        {%else %}
+        <div class="teacher"> 
+            <p><a href="{{ url_for('nopbai',malop=u['IDLopHoc'] )}}">Nộp bài</a></p>
+        </div> 
+ 
+        {% endif%}
+    </div> 
+    {% endfor%}
+</div>
+
+
+{% endblock%}

@@ -1,0 +1,58 @@
+{% extends "base_admin.html" %} 
+{% block content%}
+<table class="table  table-hover" max-width="1000px" >
+    <thead>
+      <tr bgcolor="#56b1ff">
+        <th>STT</th>
+        <th>Tên Sinh Viên</th>
+        <th>Tên đề tài</th>
+        <th>Nội dung bài nộp</th>
+        <th>File đính kèm</th>
+        <th>Trạng thái</th>
+        <th>Thao tác</th>
+      </tr>
+    </thead>
+    <tbody> 
+        {%for r in danhsach%}
+        
+        <tr>
+            <td>{{r['IDChiTiet']}}</td>
+            <td>{{ht[r['IDUser']]}}</td>
+            <td> {{r['TenDeTai']}} </td>
+            <td>{{r['NoiDung']}}</td>
+            <td>
+              {%if r['File'] ==None %} 
+                    <p style="font-weight: bolder; color: crimson;">Chưa nộp file</p>
+                   
+                  {%else%}
+                    <a href="uploads/{{r['File']}}" download>{{r['File']}}</a>
+                  {%endif%}
+            </td>
+           
+            <td> {%if r['DaNop'] ==1 %} 
+                    <p style="font-weight: bolder; color: rgb(1, 187, 100);">Đã nộp</p>
+                   
+                  {%else%}
+                    <p style="font-weight: bolder; color: crimson;">Chưa nộp</p>
+                  {%endif%}
+               
+            </td>
+            {%if r['Diem'] != None %} 
+              <td>     
+                <a href="/quanli/Class/{{r['IDLopHoc']}}/{{r['IDChiTiet']}}" > <p style="font-weight: bolder; color: #56b1ff;">Sửa điểm</p></a>
+              </td>
+            {%else%}
+              <td>    
+                <a href="/quanli/Class/{{r['IDLopHoc']}}/{{r['IDChiTiet']}}" > <p  style="font-weight: bolder; color: rgb(1, 187, 100);">Chấm điểm</p></a>
+              </td>
+            {%endif%}
+            <td>  
+              <a href="{{url_for('xoasinhvientronglop',IDChiTiet=r['IDChiTiet']) }}" > <i class="glyphicon glyphicon-trash"></i></a></td>
+               
+          </tr>
+          {% endfor%}
+    </tbody>
+  </table>
+
+        
+{% endblock%}

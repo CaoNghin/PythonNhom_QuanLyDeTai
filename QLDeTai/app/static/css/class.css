@@ -1,0 +1,454 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+    background-color: #ebebeb;
+} 
+
+.header{
+    height: 70px;
+    background:linear-gradient(to right, #4daf54, #3d8880) ;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 700;
+    align-items: center;
+}
+
+.header a{
+    color:white;
+}
+
+.header .left-header{
+    margin : 0 10px;
+    padding : 4px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .left-header a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.header .left-header p{
+    width: 40px;
+    height: 40px;
+    font-size: 27px;
+    padding-top: 2px;
+    transition:1s;
+    text-align: center;
+    margin: 0 10px;
+}
+.header .left-header a:hover p{
+    background-color: rgb(33, 116, 66);
+}
+
+.header .right-header {
+    margin: 10px;
+    padding : 5px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.header .right-header a{
+    margin: 0;
+    transition: 1s;
+    padding :25px;
+}
+
+.header .right-header a:hover{
+    text-decoration: none;
+    background-color: rgb(7, 121, 67);
+    color: white;
+}
+
+.content #mySidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3d8880;
+    overflow-x: hidden;	
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+.content #mySidenav  a {
+      padding: 3px;
+      text-decoration: none;
+      font-size: 15px;
+      color: #ffffff;
+      display: block;
+      margin-bottom: -7px;
+      transition: 0.2s;
+      border-bottom: 1px solid #5d5d5d;
+  }
+  
+.content #mySidenav a:hover {
+    color: #f1f1f1;
+    cursor: pointer;
+    background-color: #204e65;
+   
+}
+.content #mySidenav a:active{
+      color: #ffff80;
+}
+.content #mySidenav .closebtn {
+    position: absolute;
+    top: -5px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border-bottom: none;
+}
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.class-content{
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ebebeb;
+    padding: 20px 0px 0px 20px;
+    margin-left: 10px;
+    
+}
+
+.class{
+    background-color:white;
+    width: 382px; 
+    margin: 20px 10px;
+    height: 150px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 4px 14px 0 rgb(0 0 0 / 19%);
+    overflow: hidden;
+}
+.class:hover{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+.class .title{
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color:#5cb1a8 ;
+    text-align: center;
+    color: white;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;  
+}
+.class .title a{
+    transition: 0.5s;
+    color: white;
+}
+ .class .title a:hover{
+     color: yellow;
+     text-decoration: none;
+ }
+.class .teacher{
+    padding:10px;
+}
+ .table{
+     margin-top: 20px;
+     max-width: 80%;
+     width: 80%;
+ }
+
+ table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  
+.login-form{
+    width: 410px;
+    margin: 40px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 5px solid #3d8880;
+    background-color: #f7f7f7;
+}
+
+.form-header{
+    height: 40px;
+    color: #3d8880;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgb(179, 179, 179);
+}
+
+.form-body .username, .pass{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.form-body .submit{
+    align-items: center;
+    height: 50px;
+    justify-content: center;
+    padding: 12px;
+}
+
+.form-body .submit>p{
+    text-align: center;
+    margin-left: 35px;
+ 
+    
+}
+ #submit{
+    padding: 5px 20px;
+    background-color: #337ab7;
+    border: none;
+    border-radius: 3px;
+    width: 60%;
+    height: 30px;
+    color: white;
+    font-weight: 600;
+    transition: 0.5s;
+}
+#submit:hover{
+    background-color:#286090 ;
+    cursor: pointer;
+    color: white;
+}
+
+#username,#password{
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 15px;
+    line-height: 1.3333333;
+    border-radius: 4px;
+    border: none;
+    border: 1px solid #ccc;
+}
+
+#username:focus, #password:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+    box-shadow: inset 0 0px 6px rgb(0 0 0 / 8%), 0 0 13px rgb(102 175 233 / 80%);
+}
+
+
+
+.noidung{
+    width: 80%;
+    background-color: white;
+    margin: 10px auto;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.noidung .class-chamdiem{
+    height: 100vh;
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 20px;
+    
+}
+.noidung .title{
+    font-size: 20px;
+    font-weight: 700;
+    background-color:#5cb1a8 ;
+    text-align: center;
+    color: white;
+    height:50px;
+    display: flex;
+    align-items: center ;
+    overflow: hidden;
+}
+ 
+.left-title {
+    width: 5%;
+    /* background-color: #fff; */
+    height: 59px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.left-title a{
+    font-size: 43px;
+    color: white;
+    width: 60px;
+}
+
+.left-title:hover {
+    background-color: #6de0d4;
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.left-title:hover a{
+    color: white;
+}
+
+.center{
+    width: 90%;
+}
+.noidung .title p{
+    text-align: center;
+}
+
+.Bainop{
+    width: 65%;
+    padding: 20px;
+}
+
+.Bainop .row{
+    display: flex;
+    padding: 10px;
+}
+.form-diem{
+    width: 32%;
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    border-radius: 10px;
+    line-height: 2;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-diem label{
+    width: 30%;
+}
+.row-nhanxet{
+    padding: 2px;
+    display: flex;
+}
+
+.row-diem{
+    padding : 2px;
+    display: flex;
+}
+#nhanxet{
+    height: 100px;
+    padding : 7px;
+    text-overflow: ellipsis;
+    width: 245px;
+    border-radius: 3px; 
+    border: 0.5px solid #d4d4d4;
+}
+
+#diem{
+    width: 245px;
+    border-radius: 3px;
+    border: 0.5px solid #d4d4d4;
+    padding: 5px;
+}
+
+#nhanxet:focus, #diem:focus{
+    border-color: #66afe9;
+    outline: 0;
+   box-shadow: inset 0 0px 5px rgb(0 0 0 / 5%), 0 0 4px rgb(102 175 233 / 66%);
+}
+
+#butchamdiem{
+    height: 35px;
+    width: 165px;
+    border: none;
+    border-radius: 3px;
+    background-color: #4baa59;
+    font-weight: 600;
+    color: white;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+#butchamdiem:hover{
+    background-color:#306b39 ;
+}
+
+.butdiem{
+    margin-top: 20px;
+    padding: 13px;
+    text-align: center;
+    border-top: 1px solid #a7a7a7;
+}
+
+.newclass{
+    width: 80%;
+    background-color: white;
+    height: 400px;
+    margin: 10px auto;
+
+}
+
+.newclass .new-title{
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color:#5cb1a8 ;
+    text-align: center;
+    color: white;
+}
+.form-newclass{
+    padding: 20px;
+    /* margin-top: 10px; */
+    text-align: center;
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 3px;
+    background-color: #eeeeee;
+
+}
+.new-input{
+    display: flex;
+    align-items: center;
+
+}
+
+#TenLop{
+    height: 30px;
+    padding: 4px;
+    border-radius: 3px;
+    border: 0.5px solid #b9b9b9;
+}
+
+#TenLop:focus{
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 0px 5px rgb(0 0 0 / 5%), 0 0 4px rgb(102 175 233 / 66%);
+}
+
+.danhsach-new {
+    display: flex;
+}
+
+.dssinhvien{
+    background-color: white;
+    height: 138px;
+    width: 46%;
+    overflow-y: scroll;
+    padding: 10px;
+    text-align: left;
+    border-radius: 3px;
+}
+
+.sinhvien{
+    border-bottom: 0.5px solid #eeeeee;
+}
+
+.submitthem{
+    margin-top: 20px;
+}
+

@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block content%}
+
+<div class="form-nopbai">
+    <div class="nopbai-title">
+         <h1>Nộp bài</h1>
+    </div>
+    
+
+    <form method="POST" action="" enctype="multipart/form-data" novalidate> 
+        <select class="selection" name="malop">
+            {%for r in lop%}
+            <label>Môn :</label>    <option value="{{r['IDLopHoc']}}">{{r['TenLopHoc']}}</option>
+            {% endfor%}
+        </select>
+        <div class="row">
+            <p><label style="padding-right: 10px;">Tên đề tài</label></p>
+            <input id="tendetai" type="text" name="tendetai" placeholder="Tên đề tài..." width="170" height="50">
+        </div>
+        <div class="row">
+            <p><label style="padding-right: 10px;">Nội dung</label></p>
+            <textarea id="noidung" type="text" name="noidung" placeholder="Nội dung bài nộp..." width="170" height="90"></textarea>
+        </div>
+        <div class="row">
+            <p><label>Chọn file</label></p>
+            <input type="file" name="file" style="padding-left: 10px;">
+        </div>
+        <div class="butnop">
+            <input  class="submit-nop" type="submit" value="Nộp bài">
+        </div>
+        
+                  
+    </form>
+</div>
+{% endblock%}

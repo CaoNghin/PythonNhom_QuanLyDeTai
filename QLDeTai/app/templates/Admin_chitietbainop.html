@@ -1,0 +1,74 @@
+{% extends "base_admin.html" %}
+{% block content%}
+
+<div class="noidung" style="height: 500px;">
+<div class="title" >
+    <div class="left-title">
+    {%for r in Bainop %}
+    <a href="/quanli/Class/{{r['IDLopHoc']}}"><i class="fas fa-arrow-left"></i></a>
+    {% endfor%}
+    </div>
+    <div class="center">
+    <p> {{lop['TenLopHoc']}}</p>
+    </div>
+</div>
+<div class="class-chamdiem ">
+
+    {%for r in Bainop %}
+    <div class="Bainop">
+        <div class="row">
+        <p>Tên đề tài : </p>
+        <p style="font-size: 16px; font-weight: bold; margin-left: 33px;"> {{r['TenDeTai']}}</p> 
+        </div>
+        <div class="row">
+            <p>Nội dung : </p>
+            <p style="margin-left: 39px;"> {{r['NoiDung']}}</p> 
+        </div>
+        <div class="row">
+            <p>Tệp đính kèm : </p>
+            {%if r['File'] ==None %} 
+            <p style="margin-left:9px; color: crimson;">Chưa nộp file</p>
+           
+            {%else%}
+            <a style="margin-left:9px;" href="uploads/{{r['File']}}" download>{{r['File']}}</a>
+            {%endif%}
+        </div>
+        <div class="row">
+            <p>Trạng thái : </p>
+            {%if (r['DaNop']==1)%}
+                <p style="font-weight: bolder;margin-left: 31px; color: rgb(1, 187, 100);">Đã nộp</p>
+            {%else%}
+                <p style="font-weight: bolder;margin-left: 31px; color: crimson;">Chưa nộp</p>
+            {%endif%}
+            </div>
+        
+        {%if (r['Diem']!=None)%}
+        <div class="row">
+            <p>Nhận xét : </p>
+            <p> {{r['NhanXet']}}</p>
+        </div>
+        <div class="row">
+            <p>Điểm : </p>
+            <p> {{r['Diem']}}</p>
+        </div>  
+        {%endif%}
+    </div>
+<div class="form-diem" >
+    <form method="post" action = ""  novalidate>
+        <div class="row-nhanxet">
+        <label> Nhận xét:</label> 
+        <textarea id="nhanxet" type="text" placeholder ="Nhận xét..."  name="NhanXet"></textarea> <br>
+        </div>
+        <div class="row-diem">
+        <label> Điểm:</label>
+        <input id="diem" type="number" placeholder ="" name="Diem">
+        </div>
+        <div class="butdiem">
+        <input id="butchamdiem" type="submit"   name="Buttonchấmdiem" value="Chấm điểm">
+    </div>
+    </form>
+</div>
+    {% endfor%}
+</div>
+</div>
+{% endblock%}

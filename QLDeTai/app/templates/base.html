@@ -1,0 +1,62 @@
+<html>
+    <head>
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to homepage </title>
+        {% endif %}
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+  
+      <style>
+           body{
+            height: 100vh;
+            background-color: #ebebeb;
+           }
+       </style>
+    </head>
+
+    <body>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+
+            {% for message in messages %}
+            <script  type="text/javascript" >alert('{{message}}');</script>
+        {% endfor %}
+
+        {% endif %}
+    {% endwith %}
+        <div class="header"> 
+            {% if current_user.is_anonymous %}
+
+            <div class="left-header">
+                   <a href="/home"> <h1>Quản lý đề tài</h1></a>
+            </div>
+    
+    
+            <div class="right-header">
+               
+                    <a href="/login">Login</a>
+                    <a href="/register">Sign up</a>
+                {% else %} 
+            <div class="left-header">
+                    <a href="/dslop"> <h1>Quản lý đề tài</h1></a>
+             </div>
+                 <div class="right-header">
+            
+                    <a href="/thamgialophoc">Tham gia lớp học</a>
+                    <a href="/logout">Logout</a>
+                    
+                    
+                    
+                {% endif %}
+            </div>
+    
+        </div>
+        <hr>
+        
+        
+        {% block content%}
+        
+        {% endblock%}
+</body>
+</html>

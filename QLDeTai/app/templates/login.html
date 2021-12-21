@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<div class="login-form">
+    <div class="form-header">
+     <h1> Sign In </h1>
+    </div>
+    <div class="form-body">
+    <form action="" method="post" novalidate>
+     {{ form.hidden_tag() }}
+     <div class="username">
+        <p>
+            {{ form.username.label}} : </p>
+        <p>  {{ form.username(size=28)}}</p>
+    </div>
+    <div class="pass">
+        <p>
+           {{ form.password.label}} : </p>
+           <p> {{ form.password(size=28)}}</p>
+        
+    </div>
+    <div class="thongbao">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li style="color: red; margin-left: 18px;">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="submit">
+         <p>
+             {{ form.submit() }}
+         </p>
+    </form>  
+    </div>
+</div>  
+</div>       
+{% endblock%}

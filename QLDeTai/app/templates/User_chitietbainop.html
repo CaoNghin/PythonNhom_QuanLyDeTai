@@ -1,0 +1,54 @@
+{% extends "base.html" %}{% block content%}
+
+
+<div class="noidung" style="height: 500px;">
+
+
+    {%for r in results%}
+    <div class="Bainop">
+        <div class="row">
+        <p>Tên đề tài : </p>
+        <p style="font-size: 16px; font-weight: bold; margin-left: 33px;"> {{r['TenDeTai']}}</p> 
+        </div>
+        <div class="row">
+            <p>Nội dung : </p>
+            <p style="margin-left: 39px;"> {{r['NoiDung']}}</p> 
+        </div>
+        <div class="row">
+            <p>Tệp đính kèm : </p>
+          
+            <p style="margin-left:9px; color: rgb(11, 54, 172);">    {{r['File']}}</p>
+           
+       
+      
+        </div>
+        <div class="row">
+            <p>Trạng thái : </p>
+            {%if (r['DaNop']==1)%}
+                <p style="font-weight: bolder;margin-left: 31px; color: rgb(1, 187, 100);">Đã nộp</p>
+            {%else%}
+                <p style="font-weight: bolder;margin-left: 31px; color: crimson;">Chưa nộp</p>
+            {%endif%}
+            </div>
+        
+        {%if (r['Diem']!=None)%}
+        <div class="row">
+            <p>Nhận xét : </p>
+            <p> {{r['NhanXet']}}</p>
+        </div>
+        <div class="row">
+            <p>Điểm : </p>
+            <p> {{r['Diem']}}</p>
+        </div>  
+        {%endif%}
+        <div>
+
+        <a href="{{url_for('huynopbai',malop=r['IDLopHoc']) }}">Hủy nộp bài</a>
+    </div>
+    </div>
+        
+  
+
+    {% endfor%}
+</div>
+{% endblock%}

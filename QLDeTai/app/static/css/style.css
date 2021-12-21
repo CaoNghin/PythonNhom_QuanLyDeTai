@@ -1,0 +1,377 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body{
+    background-color: #bebebe6c;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+    background-color: #ebebeb;
+} 
+
+.header{
+    height: 70px;
+    background:linear-gradient(to right, #4daf54, #3d8880) ;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 700;
+    align-items: center;
+}
+
+.header a{
+    color:white;
+    text-decoration: none;
+}
+
+.header .left-header{
+    margin : 0 10px;
+    padding : 4px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .left-header a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.header .left-header p{
+    width: 40px;
+    height: 40px;
+    font-size: 27px;
+    padding-top: 2px;
+    transition:1s;
+    text-align: center;
+    margin: 0 10px;
+}
+.header .left-header a:hover p{
+    background-color: rgb(33, 116, 66);
+}
+
+.header .right-header {
+    margin: 10px;
+    padding : 5px;
+    font-size: 17px;
+}
+
+.header .right-header a{
+    margin: 0 5px;
+    height: 30px;
+    width: 30px;
+    padding:30px;
+    transition: 1s;
+}
+.header .right-header a:hover {
+    background-color: rgb(8, 83, 48);
+}
+
+
+.login-form{
+    width: 400px;
+    border : 1px solid black;
+    margin: 40px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 5px solid #3d8880;
+    background-color: #f7f7f7;
+}
+
+.form-header{
+    height: 40px;
+    color: #3d8880;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgb(179, 179, 179);
+}
+
+.form-body .username, .pass{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.form-body .submit{
+    align-items: center;
+    height: 50px;
+    justify-content: center;
+    padding: 12px;
+}
+
+.form-body .submit>p{
+    text-align: center;
+    margin-left: 35px;
+ 
+    
+}
+ #submit{
+    padding: 5px 20px;
+    background-color: #337ab7;
+    border: none;
+    border-radius: 3px;
+    width: 60%;
+    height: 30px;
+    color: white;
+    font-weight: 600;
+    transition: 0.5s;
+}
+#submit:hover{
+    background-color:#286090 ;
+    cursor: pointer;
+    color: white;
+}
+
+#username,#password{
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 15px;
+    line-height: 1.3333333;
+    border-radius: 4px;
+    border: none;
+    border: 1px solid #ccc;
+}
+
+#username:focus, #password:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+    box-shadow: inset 0 0px 6px rgb(0 0 0 / 8%), 0 0 13px rgb(102 175 233 / 80%);
+}
+
+
+.class-content{
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ebebeb;
+    padding: 20px 0px 0px 20px;
+    margin-left: 10px;
+    
+}
+
+.class{
+    background-color:white;
+    width: 382px; 
+    margin: 20px 10px;
+    height: 150px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 4px 14px 0 rgb(0 0 0 / 19%);
+    overflow: hidden;
+}
+.class:hover{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+.class .title{
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color:#5cb1a8 ;
+    text-align: center;
+    color: white;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;  
+}
+.class .title a{
+    transition: 0.5s;
+    color: white;
+}
+ .class .title a:hover{
+     color: yellow;
+     text-decoration: none;
+ }
+
+ .table{
+     margin-top: 20px;
+     max-width: 80%;
+     width: 80%;
+ }
+
+ table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+.register-form{
+    width: 480px;
+    margin: 40px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 5px solid #3d8880;
+    background-color: #f7f7f7;
+}
+.register-form .form-body .username, .pass{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.register-form .form-body{
+    padding: 13px;
+}
+
+.register-form .form-body .submit{
+    align-items: center;
+    height: 50px;
+    justify-content: center;
+    padding: 12px;
+}
+
+.register-form .form-body .submit>p{
+    text-align: center;
+    margin-left: 35px;
+}
+
+#r_username, #r_password, #r_passwordrepeat, #r_email{
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 15px;
+    line-height: 1.3333333;
+    border-radius: 4px;
+    border: none;
+    border: 1px solid #ccc;
+} 
+
+#r_username:focus, #r_password:focus, #r_passwordrepeat:focus, #r_email:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+    box-shadow: inset 0 0px 6px rgb(0 0 0 / 8%), 0 0 13px rgb(102 175 233 / 80%);
+}
+
+
+.class .teacher{
+    text-align: center;
+    padding: 5px;
+    /* margin: 66px; */
+    height: 27px;
+    width: 160px;
+    bottom: 0;
+    margin-top: 17%;
+    margin-left: 30%;
+    border-radius: 3px;
+    background-color: #337ab7;
+    transition: 0.5s;
+}
+
+.class .teacher:hover{
+    background-color:#286090  ;
+    cursor: pointer;
+
+}
+
+.class .teacher a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.Bainop{
+    width: 65%;
+    padding: 20px;
+}
+
+.Bainop .row{
+    display: flex;
+    padding: 10px;
+}
+
+.noidung{
+    width: 80%;
+    background-color: white;
+    margin: 10px auto;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.form-nopbai{
+    width: 400px;
+    margin: 40px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 5px solid #3d8880;
+    background-color: #f7f7f7;
+    padding: 10px;
+    text-align: center;
+}
+
+.form-nopbai .row{
+    display: flex;
+    padding: 5px;
+    font-size: 18px;
+    /* text-align: center; */
+    justify-content: space-between;
+}
+.form-nopbai .nopbai-title{
+    height: 40px;
+    color: #3d8880;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgb(179, 179, 179);
+
+}
+
+.selection{
+    margin:10px auto;
+}
+
+.butnop{
+    align-items: center;
+    height: 50px;
+    justify-content: center;
+    padding: 12px;
+}
+
+.submit-nop{
+    padding: 5px 20px;
+    background-color: #337ab7;
+    border: none;
+    border-radius: 3px;
+    width: 60%;
+    height: 30px;
+    color: white;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.submit-nop:hover{
+    background-color:#286090 ;
+    cursor: pointer;
+    color: white;
+}
+
+#tendetai, #noidung{
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 15px;
+    line-height: 1.3333333;
+    border-radius: 4px;
+    border: none;
+    border: 1px solid #ccc;
+    width: 270px;
+}
+
+#noidung{
+    height: 60px;
+}
+
+#tendetai:focus, #noidung:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+    box-shadow: inset 0 0px 6px rgb(0 0 0 / 8%), 0 0 13px rgb(102 175 233 / 80%);
+
+}

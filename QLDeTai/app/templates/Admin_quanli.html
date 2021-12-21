@@ -1,0 +1,21 @@
+{% extends "base_admin.html" %} 
+{% block content%}
+
+    <div class="class-content">
+        {%for r in results%}    
+        <div class="class">   
+            <div class="title">
+                <a href="/quanli/Class/{{r['IDLopHoc']}}">
+                    <p> {{r['TenLopHoc']}}</p>
+                </a>
+                <a href="{{url_for('xoalophoc',IDLopHoc=r['IDLopHoc']) }}"><i class="glyphicon glyphicon-trash"></i></a>
+            </div>
+            <div class="teacher">
+                <p> {{giangvien}}</p>
+            </div>          
+        </div>
+    
+            
+        {% endfor%}
+    </div>
+{% endblock%}
